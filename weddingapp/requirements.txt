@@ -1,4 +1,8 @@
 asgiref==3.5.2
 backports.zoneinfo==0.2.1
 Django==4.1.2
+django-reversion==5.0.3
+environ==1.0
+reversion==0.2
 sqlparse==0.4.3
+toml==0.10.2
