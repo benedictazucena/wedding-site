@@ -3,7 +3,7 @@ from django.db import models
 
 class Invite(models.Model):
     name = models.CharField(max_length=150, db_index=True)
-    urlToken = models.CharField(max_length=100, db_index=True)
+    urlToken = models.CharField(max_length=100, db_index=True, unique=True)
     pax = models.PositiveSmallIntegerField(default=1)
     rsvp = models.BooleanField(default=None)
     email = models.EmailField(blank=True, db_index=True)

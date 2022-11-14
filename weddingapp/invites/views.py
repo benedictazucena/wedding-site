@@ -3,10 +3,19 @@ from datetime import timezone
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-
+from .models import Invite
+from django.shortcuts import get_object_or_404
 
 @csrf_exempt
-def index(request):
+def index(request, invite_token=None):
+    print(invite_token + "!!!!!!!!!!!!!!!!!!!!!!!!!")
+    try:
+        invite = get_object_or_404(Invite, urlToken=invite_token)
+    except Exception as e:
+        pass
+
+    context=invite.as_dict()
+
     # context_dict = dict()
     # context_dict['events'] = []
     # today = timezone.localtime()
@@ -24,4 +33,4 @@ def index(request):
     #     action.send(request.user, verb="viewed",
     #                 action_object=event, description=desc_text)
 
-    return render(request, 'index.html')
+    return render(request, 'index.html', context)
