@@ -9,12 +9,14 @@ from django.shortcuts import get_object_or_404
 @csrf_exempt
 def index(request, invite_token=None):
     print(invite_token + "!!!!!!!!!!!!!!!!!!!!!!!!!")
+    context = dict()
     try:
         invite = get_object_or_404(Invite, urlToken=invite_token)
+        context = invite.as_dict()
     except Exception as e:
         pass
 
-    context=invite.as_dict()
+
 
     # context_dict = dict()
     # context_dict['events'] = []
