@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-ogd@)7e!cszgqg6#0(05m#!!4m)%iwf@qp8&u9m!&j6!=dn7te
 DEBUG = True
 
 ALLOWED_HOSTS = ['www.benjoandcielo.com', 'benjoandcielo.com', 'www.benjoandcielo', '*']
-
+CSRF_TRUSTED_ORIGINS = ['https://www.benjoandcielo.com', 'http://www.benjoandcielo.com']
 
 # Application definition
 
