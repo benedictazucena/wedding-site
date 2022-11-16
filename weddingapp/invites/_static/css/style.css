@@ -1030,7 +1030,7 @@ support for no js
 	z-index:1;
 }
 .header-transporent-bg-black{
-  background:#303236;
+  background:#000;
 }
 
 /* #FEATURES 1 #NEW
@@ -2158,7 +2158,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   will-change: background-position;
   margin: 0;
   padding: 0;
-  background: #2c2c2c url(../images/work-proc-bg.jpg) fixed;
+  background: #2c2c2c url({% static 'images/llustration1.jpg' %}) fixed;
   color:#f1f1f1;
 }
 .work-proc-1-bg h3, .work-proc-1-bg .icon  {
@@ -2257,7 +2257,7 @@ table.shopping-cart-table tr th, table.shopping-cart-table tr td {
   will-change: background-position;
   margin: 0;
   padding: 0;
-  background:#2c2c2c url(../images/work-proc-bg.jpg) fixed;
+  background:#2c2c2c url(../images/Illustration1.jpg) fixed;
 }
 .video-ads-text-cont {
   margin:0 auto;
@@ -3222,8 +3222,9 @@ select.input-border {
   transform: translateZ(0);
 }
 .black-header #main-menu .navbar .nav > li > a, .header-black-white #main-menu .navbar .nav > li > a {
-  color: rgba(255,255,255, .7);
+  color: black;
 }
+
 
 /* Effect 3: bottom line slides/fades in */
 .affix #main-menu .navbar .nav > li > a {

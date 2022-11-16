@@ -21,9 +21,9 @@
         {% load static %}
         <!-- FAVICONS -->
         <link rel="shortcut icon" href="{% static 'images/favicon/favicon.png' %}">
-<!--        <link rel="apple-touch-icon" href="{% static 'images/favicon/apple-touch-icon.png' %}">-->
-<!--        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicon/apple-touch-icon-72x72.png' %}">-->
-<!--        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicon/apple-touch-icon-114x114.png' %}">-->
+        <!--        <link rel="apple-touch-icon" href="{% static 'images/favicon/apple-touch-icon.png' %}">-->
+        <!--        <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/favicon/apple-touch-icon-72x72.png' %}">-->
+        <!--        <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/favicon/apple-touch-icon-114x114.png' %}">-->
         <!-- CSS -->
         <!-- REVOSLIDER CSS SETTINGS -->
         <link rel="stylesheet" type="text/css" href="{% static 'rs-plugin/css/settings.min.css' %}" media="screen">
@@ -31,6 +31,10 @@
         <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
         <!--  GOOGLE FONT -->
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700%7COpen+Sans:400,300,700' rel='stylesheet' type='text/css'>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
         <!-- ICONS ELEGANT FONT & FONT AWESOME & LINEA ICONS  -->
         <link rel="stylesheet" href="{% static 'css/icons-fonts.css' %}" >
         <!--  CSS THEME -->
@@ -56,30 +60,84 @@
         <!-- Modernizr -->
         <!-- <script src="{% static 'js/modernizr.js' %}"></script> -->
         <style>
-            form, input, label, p {
-    color: white !important;
-}
-.parent {
-    position: relative;
-    overflow: hidden;
-    //optionally set height and width, it will depend on the rest of the styling used
-}
+        .custom-button {
+          display: block !important;
+          width: 250px !important;
+          height: 50px !important;
+          line-height: 46px !important;
+          text-decoration: none !important;
+          text-align: center !important;
+          border-radius: 50px !important;
+          border: 3px solid seagreen !important;
+          color: seagreen !important;
+          font-size: 20px !important;
+          font-family: arial !important;
+          position: relative !important;
+          overflow: hidden !important;
+          background: transparent !important;
+          text-transform: uppercase !important;
+          transition: all .35s !important;
+        }
 
-.child {
-width: 1000px;
-  position: absolute;
-  left: 50%;
-  top: 0;
-  margin-left: -500px;
-}
-.child iframe {
-  display: block;
-  margin: 0 auto;
-}
+        .custom-button :before,
+        .custom-button :after{
+          position: absolute !important;
+          content: "" !important;
+          width: 100% !important;
+          height: 100% !important;
+          top: -100% !important;
+          left: 0 !important;
+          background: seagreen !important;
+          z-index: -1 !important;
+          transition: all .35s !important;
+        }
+
+        .custom-button :before{
+          opacity: .5 !important;
+        }
+
+        .custom-button :after{
+          transition-delay: .2s !important;
+        }
+
+        .custom-button :hover{
+          color: #fff !important;
+        }
+
+        .custom-button :hover:before,
+        .custom-button :hover:after{
+          top: 0 !important;
+        }
+        * {
+         font-family: 'Quicksand', sans-serif !important;
+
+        }
+        .fes4-box { margin-bottom: 30px;}
+        input {padding: 0px !important;}
+
+        .shadow-box {-webkit-box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
+-moz-box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
+box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
+            }
+        #nav-stick2.has-bg.black .header-wrapper {
+            background: #151414e6 !important;
+            -webkit-box-shadow: 0 1px 15px rgba(0,0,0, .15) !important;
+            box-shadow: 0 1px 15px rgba(0,0,0, .15) !important;
+        }
+
+            form, input, label, p {
+            color: white !important;
+            }
+            .parent {
+            position: relative;
+            overflow: hidden;
+            //optionally set height and width, it will depend on the rest of the styling used
+            }
+
         </style>
     </head>
     <body>
-    <script>
+        <script>
             var end = new Date('01/14/2023 04:30 PM');
 
                 var _second = 1000;
@@ -110,7 +168,7 @@ width: 1000px;
                 }
 
                 timer = setInterval(showRemaining, 1000);
-            </script>
+        </script>
         <!-- LOADER -->
         <div id="loader-overflow">
             <div id="loader3">Please enable JS</div>
@@ -144,8 +202,30 @@ width: 1000px;
                     </div>
                 </div>
                 <![endif]-->
-<!--                <div class="header-transporent-bg-black">-->
-<!--                    &lt;!&ndash; HEADER 1 BLACK &ndash;&gt;-->
+                <div class="header-transporent-bg-black">
+                    <!-- HEADER 1 BLACK -->
+                    <header id="nav-stick2" class="header header-1 header-side-menu black-header fixed black transparent">
+				  <div class="header-wrapper">
+            <div class="container-m-30 clearfix">
+              <div class="logo-row">
+
+              <!-- LOGO -->
+              <div class="logo-container-2">
+                <div class="logo-2">
+                  <a href="index.html" class="clearfix">
+                    <img src="{% static 'images/logo-white.png' %}" class="logo-img" alt="Logo">
+                  </a>
+                </div>
+              </div>
+             </div>
+            </div>
+            <!-- BUTTON -->
+            <div class="menu-btn-respons-container2">
+              <a class="fs-primary-nav-trigger" href="#"><span class="fs-menu-icon"></span></a>
+            </div>
+				  </div> <!-- END header-wrapper -->
+
+				</header>
 <!--                    <header id="nav" class="header header-1 black-header">-->
 <!--                        <div class="header-wrapper">-->
 <!--                            <div class="container-m-30 clearfix">-->
@@ -190,22 +270,16 @@ width: 1000px;
 <!--                                                    &lt;!&ndash; MEGA MENU ITEM &ndash;&gt;-->
 <!--                                                    <li class="parent megamenu">-->
 <!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">EVENT DATE</div>-->
+<!--                                                            <div class="main-menu-title">EVENT DETAILS</div>-->
 <!--                                                        </a>-->
 <!--                                                    </li>-->
 <!--                                                    &lt;!&ndash; MENU ITEM &ndash;&gt;-->
 <!--                                                    <li class="parent">-->
 <!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">VENUE</div>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                     &lt;!&ndash; MENU ITEM &ndash;&gt;-->
-<!--                                                    <li class="parent">-->
-<!--                                                        <a href="#">-->
 <!--                                                            <div class="main-menu-title">ATTIRE</div>-->
 <!--                                                        </a>-->
 <!--                                                    </li>-->
-<!--                                                     &lt;!&ndash; MENU ITEM &ndash;&gt;-->
+<!--                                                    &lt;!&ndash; MENU ITEM &ndash;&gt;-->
 <!--                                                    <li class="parent">-->
 <!--                                                        <a href="#">-->
 <!--                                                            <div class="main-menu-title">REGISTRY</div>-->
@@ -215,7 +289,8 @@ width: 1000px;
 <!--                                                    <li class="parent">-->
 <!--                                                        <a href="#">-->
 <!--                                                            <div class="main-menu-title">-->
-<!--                                                                RSVP</div>-->
+<!--                                                                RSVP-->
+<!--                                                            </div>-->
 <!--                                                        </a>-->
 <!--                                                    </li>-->
 <!--                                                </ul>-->
@@ -240,435 +315,126 @@ width: 1000px;
 <!--                        </div>-->
 <!--                        &lt;!&ndash; END header-wrapper &ndash;&gt;-->
 <!--                    </header>-->
-<!--                    &lt;!&ndash; STATIC MEDIA IMAGE &ndash;&gt;-->
-<!--                    <div class="sm-img-bg" >-->
-<!--                        <div class="container sm-content-cont text-center">-->
-<!--                            <div class="sm-cont-middle">-->
-<!--                                &lt;!&ndash; OPACITY container &ndash;&gt;-->
-<!--                                <div class="opacity-scroll2">-->
-<!--                                    <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center sm-mb-15 sm-mt-20" >-->
-<!--                                        <img  src="{% static 'images/main_logo.png' %}" alt="img" >-->
-<!--                                        <br>-->
-<!--                                      <br>-->
-<!--                                        <a class="button medium thin hover-dark tp-button white " href="">RSVP</a>-->
-<!--                                    </div>-->
-<!--                                    &lt;!&ndash; LAYER NR. 3 &ndash;&gt;-->
-<!--                                    <div class="center-0-478">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="sm-cont-middle">-->
-<!--                                &lt;!&ndash; OPACITY container &ndash;&gt;-->
-<!--                                <div class="opacity-scroll2">-->
-<!--                                    <div class="col-sm-8 col-sm-offset-2 col-xs-10 col-xs-offset-1 text-center sm-mb-15 sm-mt-20" >-->
-<!--                                        <img  src="{% static 'images/main_logo.png' %}" alt="img" >-->
-<!--                                        <br>-->
-<!--                                      <br>-->
-<!--                                        <a class="button medium thin hover-dark tp-button white " href="">RSVP</a>-->
-<!--                                    </div>-->
-<!--                                    &lt;!&ndash; LAYER NR. 3 &ndash;&gt;-->
-<!--                                    <div class="center-0-478">-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
+                    <!-- STATIC MEDIA IMAGE -->
 
-            <div class="header-transporent-bg-black">
 
-				<!-- HEADER 1 BLACK -->
-                    <header id="nav" class="header header-1 black-header">
-                        <div class="header-wrapper">
-                            <div class="container-m-30 clearfix">
-                                <div class="logo-row">
-                                    <!-- LOGO -->
-                                    <div class="logo-container-2">
-                                        <div class="logo-2">
-                                            <a href="index.html" class="clearfix">
-                                            <img src="{% static 'images/logo-white.png' %}" class="logo-img" alt="Logo">
-                                            </a>
-                                        </div>
+
+
+                    <div id="index-link" class="sm-img-bg-fullscr parallax-section bg-dark-alfa-80" style="background-image: url({% static 'images/static-media/Illustration3.jpg' %})" data-stellar-background-ratio="0.5">
+                        <div class="container sm-content-cont text-center js-height-fullscr">
+                            <div class="sm-cont-middle">
+                                <!-- OPACITY container -->
+                                <div class="opacity-scroll2">
+                                    <!-- LAYER NR. 1 -->
+                                    <div class="font-white light-60-wide font-32-wide-xxs sm-mb-20 sm-mt-20 relative" >
+                                        BENJO & CIELO
                                     </div>
-                                    <!-- BUTTON -->
-                                    <div class="menu-btn-respons-container">
-                                        <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">
-                                        <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>
-                                        </button>
+                                    <!-- LAYER NR. 2 -->
+                                    <div class="font-white norm-16-wide show-0-736 sm-mb-50 relative">
+                                        01/14/2023<span class="slash-divider-10">/</span>4:30PM<span class="slash-divider-10">/</span>THE ATRIUM, ENDERUN, TAGUIG
+                                    </div>
+                                    <!-- LAYER NR. 3 -->
+                                    <div class="center-0-478">
+                                        <a class="button medium thin hover-dark tp-button white " href="">RSVP</a>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- MAIN MENU CONTAINER -->
-                            <div class="main-menu-container">
-                                <div class="container-m-30 clearfix">
-                                    <!-- MAIN MENU -->
-                                    <div id="main-menu">
-                                        <div class="navbar navbar-default" role="navigation">
-                                            <!-- MAIN MENU LIST -->
-                                            <nav class="collapse collapsing navbar-collapse right-1024">
-                                                <ul class="nav navbar-nav">
-                                                    <!-- MENU ITEM -->
-                                                    <li class="parent current">
-                                                        <a href="#">
-                                                            <div class="main-menu-title">HOME</div>
-                                                        </a>
-                                                    </li>
-                                                    <!-- MENU ITEM -->
-                                                    <li class="parent">
-                                                        <a href="#">
-                                                            <div class="main-menu-title">OUR STORY</div>
-                                                        </a>
-                                                    </li>
-                                                    <!-- MEGA MENU ITEM -->
-                                                    <li class="parent megamenu">
-                                                        <a href="#">
-                                                            <div class="main-menu-title">EVENT DETAILS</div>
-                                                        </a>
-                                                    </li>
-                                                     <!-- MENU ITEM -->
-                                                    <li class="parent">
-                                                        <a href="#">
-                                                            <div class="main-menu-title">ATTIRE</div>
-                                                        </a>
-                                                    </li>
-                                                     <!-- MENU ITEM -->
-                                                    <li class="parent">
-                                                        <a href="#">
-                                                            <div class="main-menu-title">REGISTRY</div>
-                                                        </a>
-                                                    </li>
-                                                    <!-- MENU ITEM -->
-                                                    <li class="parent">
-                                                        <a href="#">
-                                                            <div class="main-menu-title">
-                                                                RSVP</div>
-                                                        </a>
-                                                    </li>
-                                                </ul>
-                                            </nav>
-                                        </div>
-                                    </div>
-                                    <!-- END main-menu -->
-                                </div>
-                                <!-- END container-m-30 -->
-                            </div>
-                            <!-- END main-menu-container -->
-                            <!-- SEARCH READ DOCUMENTATION -->
-                            <ul class="cd-header-buttons">
-                                <li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>
-                            </ul>
-                            <!-- cd-header-buttons -->
-                            <div id="cd-search" class="cd-search">
-                                <form class="form-search" id="searchForm" action="page-search-results.html" method="get">
-                                    <input type="text" value="" name="q" id="q" placeholder="Search...">
-                                </form>
                             </div>
                         </div>
-                        <!-- END header-wrapper -->
-                    </header>
-
-        <!-- STATIC MEDIA IMAGE -->
-        <div id="index-link" class="sm-img-bg-fullscr parallax-section bg-dark-alfa-80" style="background-image: url({% static 'images/static-media/Illustration3.jpg' %})" data-stellar-background-ratio="0.5">
-          <div class="container sm-content-cont text-center js-height-fullscr">
-            <div class="sm-cont-middle">
-
-							<!-- OPACITY container -->
-							<div class="opacity-scroll2">
-
-						  	<!-- LAYER NR. 1 -->
-
-                <div class="font-white light-60-wide font-32-wide-xxs sm-mb-20 sm-mt-20 relative" >
-						      BENJO & CIELO
-						  	</div>
-
-						  	<!-- LAYER NR. 2 -->
-						  	<div class="font-white norm-16-wide show-0-736 sm-mb-50 relative">
-                  01/14/2023<span class="slash-divider-10">/</span>4:30PM<span class="slash-divider-10">/</span>The Atrium, Enderun, Taguig
-						  	</div>
-
-						    <!-- LAYER NR. 3 -->
-						  	<div class="center-0-478">
-						  	<a class="button medium thin hover-dark tp-button white " href="">RSVP</a>
-                            </div>
-
-							</div>
-
-            </div>
-          </div>
-          <!-- SCROLL ICON -->
-					<div class="local-scroll-cont font-white">
-						<a href="#about" class="scroll-down smooth-scroll">
-              <div class="icon icon-arrows-down"></div>
-            </a>
-					</div>
-        </div>
-
-      </div>
-            <div id="counter-1" class="section-title-2 text-center pl-0 pr-0">
-          <div class="container">
-
-            <div class="row text-center">
-
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number" id="days">75</div>
-                <div class="count-descr">
-                  <span class="count-title">DAYS</span>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number" id="hours">450</div>
-                <div class="count-descr">
-                  <span class="count-title">HOURS</span>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number" id="mins">151</div>
-                <div class="count-descr">
-                  <span class="count-title">MINS</span>
-                </div>
-              </div>
-
-              <!-- Item -->
-              <div class="col-xs-6 col-sm-3">
-                <div class="count-number" id="secs">768</div>
-                <div class="count-descr">
-                  <span class="count-title">SECS</span>
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-
-
-        <div id="about-us-link" class="page-section" style="background-image: url({% static 'images/ping-bg.jpg' %})">
-            <div class="container fes1-cont ">
-                <div class="row">
-                    <div class="col-md-4 fes1-img-cont wow fadeInUp mb-20" style="visibility: visible; animation-name: fadeInUp;">
-                        <img src="{% static 'images/Illustration2.jpg' %}" alt="img">
+                        <!-- SCROLL ICON -->
+                        <div class="local-scroll-cont font-white">
+                            <a href="#about" class="scroll-down smooth-scroll">
+                                <div class="icon icon-arrows-down"></div>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-md-8 pl-40">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="fes1-main-title-cont wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-                                    <div class="title-fs-60 mt-0 pt-0">
-                                        A love that<br>
-                                        <span class="bold">God orchestrated</span>
-                                    </div>
-                                    <div class="line-3-100"></div>
+                </div>
+
+
+
+
+                <div id="counter-1" class="section-title-2 text-center pl-0 pr-0">
+                    <div class="container">
+                        <div class="row text-center">
+                            <!-- Item -->
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="count-number" id="days">75</div>
+                                <div class="count-descr">
+                                    <span class="count-title">DAYS</span>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 col-sm-12">
-                                <div class="wow fadeIn" style="visibility: visible; animation-name: fadeIn;">
-                                    <h4>Ours is a story of a journey shaped by prayer and trust.</h4>
-                                    <h4>Seeking God, we found each other along the way.<br>
-                                    And now, in His perfect time, here we are!
-                                    To get married in front of God and family.</h4>
+                            <!-- Item -->
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="count-number" id="hours">450</div>
+                                <div class="count-descr">
+                                    <span class="count-title">HOURS</span>
+                                </div>
+                            </div>
+                            <!-- Item -->
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="count-number" id="mins">151</div>
+                                <div class="count-descr">
+                                    <span class="count-title">MINS</span>
+                                </div>
+                            </div>
+                            <!-- Item -->
+                            <div class="col-xs-6 col-sm-3">
+                                <div class="count-number" id="secs">768</div>
+                                <div class="count-descr">
+                                    <span class="count-title">SECS</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+
+
+
+
+                <div id="about-us-link" class="page-section" style="background-image: url({% static 'images/ping-bg.jpg' %})" data-stellar-background-ratio="0.5">
+                    <div class="container fes1-cont ">
+                        <div class="row">
+                            <div class="col-md-8 pl-40">
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                        <div class="fes1-main-title-cont wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
+                                            <div class="title-fs-60 mt-0 pt-0">
+                                                A love that<br>
+                                                <span class="bold">God orchestrated</span>
+                                            </div>
+<!--                                            <div class="line-3-100"></div>-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row text-center">
+                                    <div class="col-md-12 col-sm-12">
+                                        <div class="wow fadeIn" style="visibility: visible; animation-name: fadeInLeft;">
+                                            <h4>Ours is a story of a journey shaped by prayer and trust.</h4>
+                                            <h4>Seeking God, we found each other along the way.<br>
+                                                And now, in His perfect time, here we are!<br>
+                                                To get married in front of God and family.
+                                            </h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 fes1-img-cont wow fadeInUp mb-20" style="visibility: visible; animation-name: fadeInUp;">
+                                <img src="{% static 'images/Illustration2.jpg' %}" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
 
 
                 <!-- PORTFOLIO SECTION 1 GALLERY -->
-                <div class="page-section pt-60">
-                    <div class="relative">
-                        <div class="container">
-                            <div class="mb-50">
-                                <h2 class="section-title-2 text-center pl-0 pr-0">JOURNEY <span class="bold">HIGHLIGHTS</span></h2>
-                            </div>
-                        </div>
-                        <!-- ITEMS GRID -->
-                        <ul class="port-grid display-hover-on-mobile clearfix masonry" id="items-grid">
-                            <!-- Item 1 -->
-                            <li role="button" class="port-item mix">
-                                <a href="portfolio-single1.html">
-                                    <div class="port-img-overlay"><img class="port-main-img" src="{% static 'images/portfolio/projects-1.jpg' %}" alt="img" ></div>
-                                </a>
-                                <div class="port-overlay-cont">
-                                    <div class="port-title-cont">
-                                        <h3><a href="portfolio-single1.html">MINIMALISM BOOKS</a></h3>
-                                        <span><a href="#">ui elements</a> / <a href="#">media</a></span>
-                                    </div>
-                                    <div class="port-btn-cont">
-                                        <span class="popup-multi-gallery">
-                                            <a href="{% static 'images/portfolio/projects-1.jpg' %}" class="lightbox-item mr-20" >
-                                                <div aria-hidden="true" class="icon_search"></div>
-                                            </a>
-                                            <a href="{% static 'images/blog/post-wide-3.jpg' %}"></a>
-                                            <a href="{% static 'images/blog/post-wide-4.jpg' %}"></a>
-                                            <a href="{% static 'images/blog/post-wide-5.jpg' %}"></a>
-                                        </span>
-                                        <a href="portfolio-single1.html">
-                                            <div aria-hidden="true" class="icon_link"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Item 2 -->
-                            <li role="button" class="port-item mix">
-                                <a href="portfolio-single1.html">
-                                    <div class="port-img-overlay"><img class="port-main-img" src="{% static 'images/portfolio/projects-3-big.jpg' %}" alt="img" ></div>
-                                </a>
-                                <div class="port-overlay-cont">
-                                    <div class="port-title-cont">
-                                        <h3><a href="portfolio-single1.html">CALENDAR</a></h3>
-                                        <span><a href="#">photography</a> / <a href="#">media</a></span>
-                                    </div>
-                                    <div class="port-btn-cont">
-                                        <span class="popup-multi-gallery">
-                                            <a href="{% static 'images/portfolio/projects-3-big.jpg' %}" class="lightbox-item mr-20" >
-                                                <div aria-hidden="true" class="icon_search"></div>
-                                            </a>
-                                            <a href="{% static 'images/blog/post-prev-1.jpg' %}"></a>
-                                            <a href="{% static 'images/blog/post-prev-2.jpg' %}"></a>
-                                            <a href="{% static 'images/blog/post-prev-3.jpg' %}"></a>
-                                        </span>
-                                        <a href="portfolio-single1.html">
-                                            <div aria-hidden="true" class="icon_link"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Item 3 -->
-                            <li role="button" class="port-item mix">
-                                <a href="portfolio-single1.html">
-                                    <div class="port-img-overlay"><img class="port-main-img" src="{% static 'images/portfolio/projects-5-very-big.jpg' %}" alt="img" ></div>
-                                </a>
-                                <div class="port-overlay-cont">
-                                    <div class="port-title-cont">
-                                        <h3><a href="portfolio-single1.html">EYES OF THE CAR</a></h3>
-                                        <span><a href="#">branding</a> / <a href="#">marketing</a></span>
-                                    </div>
-                                    <div class="port-btn-cont">
-                                        <span class="popup-multi-gallery">
-                                            <a href="{% static 'images/portfolio/projects-5-very-big.jpg' %}" class="lightbox-item mr-20" >
-                                                <div aria-hidden="true" class="icon_search"></div>
-                                            </a>
-                                            <a href="{% static 'images/portfolio/car-2.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/car-3.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/car-4.jpg' %}"></a>
-                                        </span>
-                                        <a href="portfolio-single1.html">
-                                            <div aria-hidden="true" class="icon_link"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Item 4 -->
-                            <li role="button" class="port-item mix">
-                                <a href="portfolio-single1.html">
-                                    <div class="port-img-overlay"><img class="port-main-img" src="{% static 'images/portfolio/projects-6-big.jpg' %}" alt="img" ></div>
-                                </a>
-                                <div class="port-overlay-cont">
-                                    <div class="port-title-cont">
-                                        <h3><a href="portfolio-single1.html">NOW IS NOW</a></h3>
-                                        <span><a href="#">design</a> / <a href="#">photography</a></span>
-                                    </div>
-                                    <div class="port-btn-cont">
-                                        <span class="popup-multi-gallery">
-                                            <a href="{% static 'images/portfolio/projects-6-big.jpg' %}" class="lightbox-item mr-20" >
-                                                <div aria-hidden="true" class="icon_search"></div>
-                                            </a>
-                                            <a href="{% static 'images/portfolio/projects-6.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/projects-6-box.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/projects-8.jpg' %}"></a>
-                                        </span>
-                                        <a href="portfolio-single1.html">
-                                            <div aria-hidden="true" class="icon_link"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Item 5 -->
-                            <li role="button" class="port-item mix">
-                                <a href="portfolio-single1.html">
-                                    <div class="port-img-overlay"><img class="port-main-img" src="{% static 'images/portfolio/projects-2-big.jpg' %}" alt="img" ></div>
-                                </a>
-                                <div class="port-overlay-cont">
-                                    <div class="port-title-cont">
-                                        <h3><a href="portfolio-single1.html">EYES OF THE CAR</a></h3>
-                                        <span><a href="#">ui elements</a> / <a href="#">media</a></span>
-                                    </div>
-                                    <div class="port-btn-cont">
-                                        <span class="popup-multi-gallery">
-                                            <a href="{% static 'images/portfolio/projects-2-big.jpg' %}" class="lightbox-item mr-20" >
-                                                <div aria-hidden="true" class="icon_search"></div>
-                                            </a>
-                                            <a href="{% static 'images/portfolio/projects-9.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/projects-10.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/projects-11.jpg' %}"></a>
-                                        </span>
-                                        <a href="portfolio-single1.html">
-                                            <div aria-hidden="true" class="icon_link"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Item 6 -->
-                            <li role="button" class="port-item mix">
-                                <a href="portfolio-single1.html">
-                                    <div class="port-img-overlay"><img class="port-main-img" src="{% static 'images/portfolio/projects-4.jpg' %}" alt="img" ></div>
-                                </a>
-                                <div class="port-overlay-cont">
-                                    <div class="port-title-cont">
-                                        <h3><a href="portfolio-single1.html">LOVE</a></h3>
-                                        <span><a href="#">branding</a> / <a href="#">media</a></span>
-                                    </div>
-                                    <div class="port-btn-cont">
-                                        <span class="popup-multi-gallery">
-                                            <a href="{% static 'images/portfolio/projects-4.jpg' %}" class="lightbox-item mr-20" >
-                                                <div aria-hidden="true" class="icon_search"></div>
-                                            </a>
-                                            <a href="{% static 'images/blog/post-prev-4.jpg' %}"></a>
-                                            <a href="{% static 'images/blog/post-prev-5.jpg' %}"></a>
-                                            <a href="{% static 'images/blog/post-prev-6.jpg' %}"></a>
-                                        </span>
-                                        <a href="portfolio-single1.html">
-                                            <div aria-hidden="true" class="icon_link"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- Item 7 -->
-                            <li role="button" class="port-item mix">
-                                <a href="portfolio-single1.html">
-                                    <div class="port-img-overlay"><img class="port-main-img" src="{% static 'images/portfolio/projects-7.jpg' %}" alt="img" ></div>
-                                </a>
-                                <div class="port-overlay-cont">
-                                    <div class="port-title-cont">
-                                        <h3><a href="portfolio-single1.html">YELLOW BOOK</a></h3>
-                                        <span><a href="#">design</a> / <a href="#">media</a></span>
-                                    </div>
-                                    <div class="port-btn-cont">
-                                        <span class="popup-multi-gallery">
-                                            <a href="{% static 'images/portfolio/projects-7.jpg' %}" class="lightbox-item mr-20" >
-                                                <div aria-hidden="true" class="icon_search"></div>
-                                            </a>
-                                            <a href="{% static 'images/portfolio/projects-12.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/projects-13.jpg' %}"></a>
-                                            <a href="{% static 'images/portfolio/projects-14.jpg' %}"></a>
-                                        </span>
-                                        <a href="portfolio-single1.html">
-                                            <div aria-hidden="true" class="icon_link"></div>
-                                        </a>
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
+                <div  class="page-section " >
+                <img src="{% static 'images/Illustration1.jpg' %}"  alt="Logo">
                 </div>
+
+
+
+
 
                 <div class="page-section gray-bg">
                     <div class="container-fluid">
@@ -676,7 +442,7 @@ width: 1000px;
                             <div class="col-md-4">
                                 <div class="row parent">
                                     <div class="child"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.1651891027645!2d121.05077401483949!3d14.532541989845829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8c6d45a9683%3A0x4858df2cf1fb0555!2sThe%20Atrium%20at%20Enderun!5e0!3m2!1sen!2sph!4v1668366577597!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                                </div>
-</div>
+                                </div>
                             </div>
                             <div class="col-md-8">
                                 <div class="contact-form-cont">
@@ -723,75 +489,88 @@ width: 1000px;
                         </div>
                     </div>
                 </div>
+
+
+
+
+
+
                 <!-- RSVP -->
-                <div class="page-section work-proc-1-bg" >
+                <div class="page-section "  style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
                     <div class="container fes4-cont">
                         <div class="row">
                             <div class="col-md-3 ">
-                                <div class="mb-50">
-                                    <h2 class="section-title"><span class="bold">RSVP</span></h2>
+                                <div class="fes4-box">
+                                    <h1 class="" style="margin-top:19px; !important; color:black !important;"><span class="bold">RSVP</span></h1>
                                 </div>
-                                <p class="mb-50 " >We look forward to celebrating with you!</p>
                             </div>
                             <div class="col-md-8 col-lg-offset-1">
                                 <div class="row">
                                     <div class="col-xs-12 col-sm-12 col-md-12">
                                         <div class="fes4-box">
-                                            <div class="fes4-title-cont" >
-                                                <div class="fes4-box-icon">
-                                                    <div class="icon icon-basic-mail"></div>
-                                                </div>
-                                                <h3><span class="bold">EMAIL</span></h3>
+                                            <div class="" >
+                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">EMAIL</span></h4>
                                                 <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <div class="fes4-box">
-                                            <div class="fes4-title-cont" >
-                                                <div class="fes4-box-icon">
-                                                    <div class="icon icon-basic-smartphone"></div>
-                                                </div>
-                                                <h3><span class="bold">MOBILE</span></h3>
-                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="MOBILE NUMBER" required>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <div class="fes4-box">
-                                            <div class="fes4-title-cont" >
-                                                <div class="fes4-box-icon">
-                                                    <div class="icon icon-basic-todo-txt"></div>
-                                                </div>
-                                                <h3><span class="bold">OTHER DETAILS</span></h3>
-                                                <div class="row">
-                                                <div class="col-md-12 mb-40">
-                                                    <!-- <label>Message *</label> -->
-                                                    <textarea maxlength="5000" data-msg-required="Please enter your message" rows="3" class="controled" name="message" id="message" placeholder="MESSAGE" required></textarea>
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12 text-center-xxs">
-                                                    <input type="submit" value="SEND MESSAGE" class="button medium gray" data-loading-text="Loading...">
-                                                </div>
-                                            </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="fes4-box">
+                                            <div class="" >
+                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">MOBILE NUMBER</span></h4>
+                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-4 col-sm-4 col-md-4">
+                                        <div class="fes4-box">
+                                            <div class="" >
+                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">PAX</span></h4>
+                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-8 col-sm-8 col-md-8">
+                                        <div class="fes4-box">
+                                            <div class="" >
+                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">VACCINATION STATUS</span></h4>
+                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-sm-12 col-md-12">
+                                        <div class="fes4-box">
+                                            <div class="" >
+                                                <h4><span class="bold" style="color:black !important;"><span class="bold">ANY FOOD ALLERGIES?</span></h4>
+                                                <div class="row">
+                                                    <div class="col-md-12 mb-40">
+                                                        <!-- <label>Message *</label> -->
+                                                        <textarea maxlength="5000" data-msg-required="Please enter your message" rows="3" class="controled" name="message" id="message" placeholder="MESSAGE" required></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-md-12 text-center-xxs">
+                                                        <a class="button medium thin hover-dark tp-button custom-button " href="">SUBMIT</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
-
                 <!-- FOOTER 1 -->
                 <footer class="page-section text-center pt-100-b-80-cont">
                     <div class="container">
-
                         <!-- Copyright -->
                         <div class="footer-copy">
                             <a href="http://themeforest.net/user/abcgomel/portfolio" target="_blank">&copy; Benjo&Cielo 2022</a>
@@ -805,11 +584,24 @@ width: 1000px;
             </div>
             <!-- End BG -->
         </div>
+
+
+
+        <nav>
+   <div class="fs-primary-nav fs-nav-black">
+      <ul class="block-center-xy">
+         <li><a class="a-white" href="#">home</a></li>
+         <li><a class="a-white" href="#">our story</a></li>
+         <li><a class="a-white" href="#">event details</a></li>
+         <li><a class="a-white" href="#">registry</a></li>
+          <li><a class="a-white" href="#">rsvp</a></li>
+
+      </ul>
+   </div>
+</nav>
         <!-- End wrap -->
         <!-- JS begin -->
         <!-- jQuery  -->
-
-
         <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{% static 'js/bootstrap.min.js' %}"></script>
@@ -833,36 +625,36 @@ width: 1000px;
         <!-- OWL CAROUSEL -->
         <script src="{% static 'js/owl.carousel.min.js' %}"></script>
         <!-- PARALLAX -->
-    <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+        <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+        <!-- ONE PAGE NAV -->
+        <script src="{% static 'js/jquery.nav.js' %}"></script>
+        <script>
+            $(document).ready(function() {
+            //ONE PAGE NAV	---------------------------------------------------------------------------
+            var top_offset = $('header').height() - 1;  // get height of fixed navbar
 
-    <!-- ONE PAGE NAV -->
-    <script src="{% static 'js/jquery.nav.js' %}"></script>
-    <script>
-      $(document).ready(function() {
-      //ONE PAGE NAV	---------------------------------------------------------------------------
-      var top_offset = $('header').height() - 1;  // get height of fixed navbar
+            $('#nav-onepage').onePageNav({
+              currentClass: 'current',
+              changeHash: false,
+              scrollSpeed: 700,
+              scrollOffset: top_offset,
+              scrollThreshold: 0.5,
+              filter: '',
+              easing: 'swing',
+              begin: function() {
+                //I get fired when the animation is starting
+              },
+              end: function() {
+                //I get fired when the animation is ending
+              },
+              scrollChange: function($currentListItem) {
+                //I get fired when you enter a section and I pass the list item of the section
+              }
+            });
 
-      $('#nav-onepage').onePageNav({
-        currentClass: 'current',
-        changeHash: false,
-        scrollSpeed: 700,
-        scrollOffset: top_offset,
-        scrollThreshold: 0.5,
-        filter: '',
-        easing: 'swing',
-        begin: function() {
-          //I get fired when the animation is starting
-        },
-        end: function() {
-          //I get fired when the animation is ending
-        },
-        scrollChange: function($currentListItem) {
-          //I get fired when you enter a section and I pass the list item of the section
-        }
-      });
-
-      });//END document.ready
-    </script>
+            });//END document.ready
+        </script>
+        <script src="{% static 'js/fs-menu.js' %}"></script>
         <!-- MAIN SCRIPT -->
         <script src="{% static 'js/main.js' %}"></script>
         <!-- JS end -->
