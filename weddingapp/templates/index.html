@@ -60,6 +60,7 @@
         <!-- Modernizr -->
         <!-- <script src="{% static 'js/modernizr.js' %}"></script> -->
         <style>
+
         * {
          font-family: 'Quicksand', sans-serif !important;
 
@@ -169,7 +170,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
               <!-- LOGO -->
               <div class="logo-container-2">
                 <div class="logo-2">
-                  <a href="index.html" class="clearfix">
+                  <a href="/invite" class="clearfix">
                     <img src="{% static 'images/logo.png' %}" class="logo-img" alt="Logo">
                   </a>
                 </div>
@@ -177,9 +178,11 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
              </div>
             </div>
             <!-- BUTTON -->
+          {% if request.session.invite_token %}
             <div class="menu-btn-respons-container2">
               <a class="fs-primary-nav-trigger" href="#"><span class="fs-menu-icon"></span></a>
             </div>
+          {% endif %}
 				  </div> <!-- END header-wrapper -->
 
 				</header>
@@ -202,9 +205,34 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                         01/14/2023<span class="slash-divider-10">/</span>4:30PM<span class="slash-divider-10">/</span>THE ATRIUM, ENDERUN, TAGUIG
                                     </div>
                                     <!-- LAYER NR. 3 -->
+                                    {% if request.session.invite_token %}
                                     <div class="center-0-478">
                                         <a class="button medium thin hover-dark tp-button white " href="">RSVP</a>
                                     </div>
+                                    {% else %}
+                                    <div class="row text-center"></div>
+                                        <div class="col-md-4 col-sm-3"></div>
+                                        <div class="col-md-4 col-sm-6 text-center">
+                                            <form id="token_form">
+                                            <div class="input-group" style="">
+                                              <input maxlength="6" id="token" style="color:#DDD !important; text-transform:uppercase; background-color: rgba(0, 0, 0, 0.3) !important; text-indent: 10px !important; " type="text" class="form-control pl-2" placeholder="ENTER 6-LETTER TOKEN" required>
+                                              <span class="input-group-btn">
+                                                <button id="tokensubmit" style="background-color: rgba(0, 0, 0, 0.3) !important; color: #fff !important;" class="btn btn-default" type="button"><div class="icon icon-arrows-right"></div></button>
+                                              </span>
+                                            </div><!-- /input-group -->
+                                            </form>
+                                            {% if error %}
+                                            <br>
+                                            <div class="alert alert-danger nobottommargin">
+                                              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                               Invalid token, please try again
+                                            </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-md-4 col-sm-3"></div>
+
+                                    </div>
+                                    {% endif %}
                                 </div>
                             </div>
                         </div>
@@ -222,9 +250,11 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <!--########################-->
 <!--COUNTER COUNTER COUNTER-->
 <!--########################-->
-                <div class="port-view-more-cont-dark">
-                  <span style="background-color:black !important;" class="port-view-more-dark">Hi {{name}}! We are excited to celebrate with you!</span>
-                </div>
+                {% if request.session.invite_token %}
+                    <div class="port-view-more-cont-dark">
+                      <span style="background-color:black !important;" class="port-view-more-dark">Hi {{name}}! We are excited to celebrate with you!</span>
+                    </div>
+                {% endif %}
                 <div id="counter-1" class="section-title-2 text-center pl-0 pr-0">
                     <div class="container">
                         <div class="row text-center">
@@ -264,7 +294,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <!--########################-->
 <!--OUR STORY OUR STORY-->
 <!--########################-->
-
+{% if request.session.invite_token %}
                 <div id="about-us-link" class="page-section" style="background-image: url({% static 'images/ping-bg.jpg' %})" data-stellar-background-ratio="0.5">
                     <div class="container fes1-cont ">
                         <div class="row">
@@ -320,7 +350,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
               <!-- Slide Item -->
               <div class="container relative">
                 <div style="display: flex; align-items: center; justify-content: center;" class="row">
-                  <div class="col-md-12 text-center">
+                  <div class="col-md-12 text-center ">
 
                       <h3>JANUARY 14, 2023</h3>
                       <h4 class="mt-0 mb-0">Doors open at</h4>
@@ -328,7 +358,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                       <h4>The ATRIUM & COURTYARD<br>
                           Enderun, Taguig CITY</h4>
 
-                      <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="map" ><bold>SEE MAP HERE</bold></a>
+                      <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="gmap" ><bold>SEE MAP HERE</bold></a>
 
                   </div>
                 </div>
@@ -406,7 +436,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 
             </div>
           </div>
-
+{% endif %}
 
 <!--########################-->
 <!--PICTURE GALLERY PICTURE GALLERY-->
@@ -419,8 +449,9 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <!--########################-->
 <!--RSVP RSVP RSVP RSVP -->
 <!--########################-->
-
+        {% if request.session.invite_token %}
         <!-- RSVP -->
+
         <div class="page-section "  style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
             <div class="container fes4-cont">
                 <form id="rsvp_form">
@@ -435,7 +466,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="fes4-box">
                                         <div class="" >
-                                            <h4 style="color:black !important;"><span class="bold"><span class="bold">EMAIL</span></h4>
+                                            <h4 style="color:black !important;">EMAIL</h4>
                                             <input style="color:black !important;" class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
                                         </div>
                                     </div>
@@ -445,7 +476,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="fes4-box">
                                         <div class="" >
-                                            <h4 style="color:black !important;"><span class="bold"><span class="bold">MOBILE NUMBER</span></h4>
+                                            <h4 style="color:black !important;">MOBILE NUMBER</h4>
                                             <input style="color:black !important;" class="text-light w-100" type="number" pattern="\d{9}" onkeypress="javascript:return isNumber(event)" value="09" data-msg-required="Please enter a valid mobile number" maxlength="100" class="controled" name="number" id="number" placeholder="'09' or '639'" required>
                                         </div>
                                     </div>
@@ -455,7 +486,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                 <div class="col-xs-4 col-sm-4 col-md-4">
                                     <div class="fes4-box">
                                         <div class="" >
-                                            <h4 style="color:black !important;"><span class="bold"><span class="bold">PAX</span></h4>
+                                            <h4 style="color:black !important;">PAX</h4>
                                             <input style="color:black !important;" class=" w-100" type="number" pattern="\d{2}" onkeypress="javascript:return isNumber(event)" max="{{pax}}" min="1" value="{{pax}}" data-msg-required="Please enter how many are attending" class="controled" name="email" id="pax" required>
                                         </div>
                                     </div>
@@ -463,7 +494,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                 <div class="col-xs-8 col-sm-8 col-md-8">
                                     <div class="fes4-box">
                                         <div class="" >
-                                            <h4 style="color:black !important;"><span class="bold"><span class="bold">VACCINATION STATUS</span></h4>
+                                            <h4 style="color:black !important;">VACCINATION STATUS</h4>
                                             <select style="color:black !important;" id="vaccination" class="form-select w-100 pt-0 pb-1" aria-label=".form-select-sm example">
                                               <option value="Fully Vaccinated">Fully Vaccinated</option>
                                               <option value="Already had at least 1 dose">Already had at least 1 dose</option>
@@ -477,7 +508,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                 <div class="col-xs-12 col-sm-12 col-md-12">
                                     <div class="fes4-box">
                                         <div class="" >
-                                            <h4><span class="bold" style="color:black !important;"><span class="bold">ANY FOOD ALLERGIES?</span></h4>
+                                            <h4><span class="" style="color:black !important;">ANY FOOD ALLERGIES?</span></h4>
                                             <div class="row">
                                                 <div class="col-md-12 mb-40">
                                                     <!-- <label>Message *</label> -->
@@ -493,13 +524,12 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     </div>
                                 </div>
                             </div>
-                            </div>
                         </div>
                     </div>
                 </form>
             </div>
         </div>
-
+        {% endif %}
 
 
 <!--########################-->
@@ -604,6 +634,42 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
               }
               else{
                 rsvp_form.reportValidity()
+              }
+            })
+
+            $('#token').keypress(function(event){
+
+                var keycode = (event.keyCode ? event.keyCode : event.which);
+                if(keycode == '13'){
+                    event.preventDefault();
+                   var token_form = document.getElementById("token_form")
+                        if(token_form.checkValidity()){
+                            var token = $("#token").val();
+
+                            data_dict = { "token": token
+                                          }
+                            location.href = "/invite/"+ token
+
+                      }
+                      else{
+                        token_form.reportValidity()
+                      }
+                }
+            });
+
+            $("#tokensubmit").click(function(){
+                var token_form = document.getElementById("token_form")
+                if(token_form.checkValidity()){
+                    var token = $("#token").val();
+
+                    data_dict = { "token": token
+                                  }
+
+                    location.href = "/invite/"+ token
+
+              }
+              else{
+                token_form.reportValidity()
               }
             })
 
