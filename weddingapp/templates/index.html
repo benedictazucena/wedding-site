@@ -60,54 +60,6 @@
         <!-- Modernizr -->
         <!-- <script src="{% static 'js/modernizr.js' %}"></script> -->
         <style>
-        .custom-button {
-          display: block !important;
-          width: 250px !important;
-          height: 50px !important;
-          line-height: 46px !important;
-          text-decoration: none !important;
-          text-align: center !important;
-          border-radius: 50px !important;
-          border: 3px solid seagreen !important;
-          color: seagreen !important;
-          font-size: 20px !important;
-          font-family: arial !important;
-          position: relative !important;
-          overflow: hidden !important;
-          background: transparent !important;
-          text-transform: uppercase !important;
-          transition: all .35s !important;
-        }
-
-        .custom-button :before,
-        .custom-button :after{
-          position: absolute !important;
-          content: "" !important;
-          width: 100% !important;
-          height: 100% !important;
-          top: -100% !important;
-          left: 0 !important;
-          background: seagreen !important;
-          z-index: -1 !important;
-          transition: all .35s !important;
-        }
-
-        .custom-button :before{
-          opacity: .5 !important;
-        }
-
-        .custom-button :after{
-          transition-delay: .2s !important;
-        }
-
-        .custom-button :hover{
-          color: #fff !important;
-        }
-
-        .custom-button :hover:before,
-        .custom-button :hover:after{
-          top: 0 !important;
-        }
         * {
          font-family: 'Quicksand', sans-serif !important;
 
@@ -202,6 +154,11 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                     </div>
                 </div>
                 <![endif]-->
+
+
+<!--########################-->
+<!--MENU MENU MENU MENU MENU-->
+<!--########################-->
                 <div class="header-transporent-bg-black">
                     <!-- HEADER 1 BLACK -->
                     <header id="nav-stick2" class="header header-1 header-side-menu black-header fixed black transparent">
@@ -226,100 +183,11 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 				  </div> <!-- END header-wrapper -->
 
 				</header>
-<!--                    <header id="nav" class="header header-1 black-header">-->
-<!--                        <div class="header-wrapper">-->
-<!--                            <div class="container-m-30 clearfix">-->
-<!--                                <div class="logo-row">-->
-<!--                                    &lt;!&ndash; LOGO &ndash;&gt;-->
-<!--                                    <div class="logo-container-2">-->
-<!--                                        <div class="logo-2">-->
-<!--                                            <a href="index.html" class="clearfix">-->
-<!--                                            <img src="{% static 'images/logo-white.png' %}" class="logo-img" alt="Logo">-->
-<!--                                            </a>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    &lt;!&ndash; BUTTON &ndash;&gt;-->
-<!--                                    <div class="menu-btn-respons-container">-->
-<!--                                        <button type="button" class="navbar-toggle btn-navbar collapsed" data-toggle="collapse" data-target="#main-menu .navbar-collapse">-->
-<!--                                        <span aria-hidden="true" class="icon_menu hamb-mob-icon"></span>-->
-<!--                                        </button>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            &lt;!&ndash; MAIN MENU CONTAINER &ndash;&gt;-->
-<!--                            <div class="main-menu-container">-->
-<!--                                <div class="container-m-30 clearfix">-->
-<!--                                    &lt;!&ndash; MAIN MENU &ndash;&gt;-->
-<!--                                    <div id="main-menu">-->
-<!--                                        <div class="navbar navbar-default" role="navigation">-->
-<!--                                            &lt;!&ndash; MAIN MENU LIST &ndash;&gt;-->
-<!--                                            <nav class="collapse collapsing navbar-collapse right-1024">-->
-<!--                                                <ul class="nav navbar-nav">-->
-<!--                                                    &lt;!&ndash; MENU ITEM &ndash;&gt;-->
-<!--                                                    <li class="parent current">-->
-<!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">HOME</div>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                    &lt;!&ndash; MENU ITEM &ndash;&gt;-->
-<!--                                                    <li class="parent">-->
-<!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">OUR STORY</div>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                    &lt;!&ndash; MEGA MENU ITEM &ndash;&gt;-->
-<!--                                                    <li class="parent megamenu">-->
-<!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">EVENT DETAILS</div>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                    &lt;!&ndash; MENU ITEM &ndash;&gt;-->
-<!--                                                    <li class="parent">-->
-<!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">ATTIRE</div>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                    &lt;!&ndash; MENU ITEM &ndash;&gt;-->
-<!--                                                    <li class="parent">-->
-<!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">REGISTRY</div>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                    &lt;!&ndash; MENU ITEM &ndash;&gt;-->
-<!--                                                    <li class="parent">-->
-<!--                                                        <a href="#">-->
-<!--                                                            <div class="main-menu-title">-->
-<!--                                                                RSVP-->
-<!--                                                            </div>-->
-<!--                                                        </a>-->
-<!--                                                    </li>-->
-<!--                                                </ul>-->
-<!--                                            </nav>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    &lt;!&ndash; END main-menu &ndash;&gt;-->
-<!--                                </div>-->
-<!--                                &lt;!&ndash; END container-m-30 &ndash;&gt;-->
-<!--                            </div>-->
-<!--                            &lt;!&ndash; END main-menu-container &ndash;&gt;-->
-<!--                            &lt;!&ndash; SEARCH READ DOCUMENTATION &ndash;&gt;-->
-<!--                            <ul class="cd-header-buttons">-->
-<!--                                <li><a class="cd-search-trigger" href="#cd-search"><span></span></a></li>-->
-<!--                            </ul>-->
-<!--                            &lt;!&ndash; cd-header-buttons &ndash;&gt;-->
-<!--                            <div id="cd-search" class="cd-search">-->
-<!--                                <form class="form-search" id="searchForm" action="page-search-results.html" method="get">-->
-<!--                                    <input type="text" value="" name="q" id="q" placeholder="Search...">-->
-<!--                                </form>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        &lt;!&ndash; END header-wrapper &ndash;&gt;-->
-<!--                    </header>-->
-                    <!-- STATIC MEDIA IMAGE -->
 
 
-
-
+<!--########################-->
+<!--LANDING PAGE LANDING PAGE-->
+<!--########################-->
                     <div id="index-link" class="sm-img-bg-fullscr parallax-section bg-dark-alfa-80" style="background-image: url({% static 'images/static-media/Illustration3.jpg' %})" data-stellar-background-ratio="0.5">
                         <div class="container sm-content-cont text-center js-height-fullscr">
                             <div class="sm-cont-middle">
@@ -351,7 +219,12 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 
 
 
-
+<!--########################-->
+<!--COUNTER COUNTER COUNTER-->
+<!--########################-->
+                <div class="port-view-more-cont-dark">
+                  <span style="background-color:black !important;" class="port-view-more-dark">Hi {{name}}! We are excited to celebrate with you!</span>
+                </div>
                 <div id="counter-1" class="section-title-2 text-center pl-0 pr-0">
                     <div class="container">
                         <div class="row text-center">
@@ -388,7 +261,9 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                 </div>
 
 
-
+<!--########################-->
+<!--OUR STORY OUR STORY-->
+<!--########################-->
 
                 <div id="about-us-link" class="page-section" style="background-image: url({% static 'images/ping-bg.jpg' %})" data-stellar-background-ratio="0.5">
                     <div class="container fes1-cont ">
@@ -401,7 +276,6 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                                 A love that<br>
                                                 <span class="bold">God orchestrated</span>
                                             </div>
-<!--                                            <div class="line-3-100"></div>-->
                                         </div>
                                     </div>
                                 </div>
@@ -426,149 +300,223 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 
 
 
-
-                <!-- PORTFOLIO SECTION 1 GALLERY -->
-                <div  class="page-section " >
+<!--########################-->
+<!--PICTURE GALLERY PICTURE GALLERY-->
+<!--########################-->
+            <div  class="page-section " >
                 <img src="{% static 'images/Illustration1.jpg' %}"  alt="Logo">
+            </div>
+
+
+
+<!--########################-->
+<!--EVENT DETAIL EVENT DETAILS-->
+<!--########################-->
+
+        <!-- TESTIMONIALS 2 FULL WIDTH SLIDER -->
+          <div class="page-section p-60-cont owl-white-bg  fullwidth-slider">
+            <div class="owl-white-bg fullwidth-slider ">
+
+              <!-- Slide Item -->
+              <div class="container relative">
+                <div class="row">
+                  <div class="col-md-12 text-center">
+
+                      <h3>JANUARY 14, 2023</h3>
+                      <h4 class="mt-0 mb-0">Doors open at</h4>
+                      <h3 class="mt-0"> <bold>4:00 PM</bold></h3>
+                      <h4>The ATRIUM & COURTYARD<br>
+                          Enderun, Taguig CITY</h4>
+
+                      <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="map" ><bold>SEE MAP HERE</bold></a>
+
+                  </div>
                 </div>
+                <div class="row">
+                        <img style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; width: 50%;" src="{% static 'images/enderun.png' %}"  alt="Logo">
+                </div>
+              </div>
+
+              <!-- Slide Item -->
+              <div class="container relative">
+                <div class="row" style="height:100%;">
+                  <div class="col-md-12 text-center">
+
+                      <h4 class="mb-0">MEETING LINK OPENS AT</h4>
+                      <h3 class="mt-0"> <bold>4:30 PM</bold></h3>
+
+                      <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="map" ><bold>ENTER ZOOM</bold></a>
+
+                  </div>
+                </div>
+                <div class="row">
+                        <img style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; width: 50%;" src="{% static 'images/enderun.png' %}"  alt="Logo">
+                </div>
+              </div>
+
+                {% if isEntourage == 0 %}
+
+                <!-- Slide Item -->
+              <div class="container relative">
+                <div class="row" style="height:100%;">
+                    <div class="col-md-5 text-center">
+                        <img style="max-width: 50%;" src="{% static 'images/guest_attire.png' %}"  alt="Logo">
+                  </div>
+                  <div class="col-md-7 text-center">
+                        <h3><bold>ATTIRE</bold></h3>
+                      <h3 class="mt-0">LONG DRESS FOR LADIES</h3><br>
+                      <h4 class="mt-0">NO WHITE, bright colors & LOUD PRINTS</h4>
+                      <h3 class="mt-0">SUIT AND TIE / LONG SLEEVES FOR MEN</h3>
+                      <h4 class="mt-0">NO DARK GREY SUIT & BLACK TIE</h4>
+                      <h3 class="mb-1">KINDLY FOLLOW THIS COLOR PALETTE.</h3>
+                      <img style="max-width: 50%; height: auto; display: block; margin-left: auto; margin-right: auto; width: 50%;" src="{% static 'images/guest_pallete.png' %}"  alt="Logo">
+                  </div>
+                </div>
+              </div>
+
+                  {% else %}
+
+            <!-- Slide Item -->
+              <div class="container relative">
+                <div class="row mt-4" style="height:100%;">
+                    <div class="col-md-6 text-right">
+                        <img style="max-width: 50%;" src="{% static 'images/entourage_attire.png' %}"  alt="Logo">
+
+                  </div>
+                  <div class="col-md-6 text-left">
+                        <h2><bold>ATTIRE</bold></h2>
+                      <h4 class="mt-0 mb-0">LONG DRESS FOR LADIES</h4>
+                      <span class="mt-0">NO WHITE, bright colors & LOUD PRINTS</span>
+                      <h4 class="mb-0">SUIT AND TIE / LONG SLEEVES FOR MEN</h4>
+                      <span class="mt-0">NO DARK GREY SUIT & BLACK TIE</span>
+                      <h4 class="mb-1">KINDLY FOLLOW THIS COLOR PALETTE.</h4>
+                      <img style="max-width: 50%; height: auto; display: block;  width: 50%;" src="{% static 'images/entourage_pallete.png' %}"  alt="Logo">
+                  </div>
+                </div>
+              </div>
+
+                        {% endif %}
+
+                <!-- Slide Item -->
+              <div class="container relative">
+                <div class="row" style="height:100%;">
+                  <div class="col-md-12 text-center">
+                      <img style="max-width: 10%;" src="{% static 'images/gift.png' %}"  alt="Logo">
+
+                      <h2 class="mb-0">GIFT GUIDE</h2>
+                      <h5>With all that we have, we've been truly blessed.<br>
+                            Your presence and prayers are all that we request.<br>
+                            But if you desire to give nonetheless,<br>
+                            a monetary gift is one we suggest.</h5>
+                      <br><br>
+
+                      <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="map" ><bold>CLICK HERE FOR DETAILS</bold></a>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
 
 
+<!--########################-->
+<!--PICTURE GALLERY PICTURE GALLERY-->
+<!--########################-->
+        <div  class="page-section" >
+            <img src="{% static 'images/Illustration3.jpg' %}"  alt="Logo">
+        </div>
 
 
+<!--########################-->
+<!--RSVP RSVP RSVP RSVP -->
+<!--########################-->
 
-                <div class="page-section gray-bg">
-                    <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="row parent">
-                                    <div class="child"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3862.1651891027645!2d121.05077401483949!3d14.532541989845829!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c8c6d45a9683%3A0x4858df2cf1fb0555!2sThe%20Atrium%20at%20Enderun!5e0!3m2!1sen!2sph!4v1668366577597!5m2!1sen!2sph" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>                                </div>
+        <!-- RSVP -->
+        <div class="page-section "  style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
+            <div class="container fes4-cont">
+                <form id="rsvp_form">
+                    <div class="row">
+                        <div class="col-md-3 ">
+                            <div class="fes4-box">
+                                <h1 class="" style="margin-top:19px; !important; color:black !important;"><span class="bold">RSVP</span></h1>
+                            </div>
+                        </div>
+                        <div class="col-md-8 col-lg-offset-1">
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="fes4-box">
+                                        <div class="" >
+                                            <h4 style="color:black !important;"><span class="bold"><span class="bold">EMAIL</span></h4>
+                                            <input style="color:black !important;" class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-md-8">
-                                <div class="contact-form-cont">
-                                    <!-- TITLE -->
-                                    <div class="mb-40">
-                                        <h2 class="section-title">CONTACT <span class="bold">US</span></h2>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="fes4-box">
+                                        <div class="" >
+                                            <h4 style="color:black !important;"><span class="bold"><span class="bold">MOBILE NUMBER</span></h4>
+                                            <input style="color:black !important;" class="text-light w-100" type="number" pattern="\d{9}" onkeypress="javascript:return isNumber(event)" value="09" data-msg-required="Please enter a valid mobile number" maxlength="100" class="controled" name="number" id="number" placeholder="'09' or '639'" required>
+                                        </div>
                                     </div>
-                                    <!-- CONTACT FORM -->
-                                    <div>
-                                        <form id="contact-form" action="php/contact-form.php" method="POST" novalidate="novalidate">
-                                            <div class="row">
-                                                <div class="col-md-12 mb-30">
-                                                    <!-- <label>Your name *</label> -->
-                                                    <input type="text" value="" data-msg-required="Please enter your name" maxlength="100" class="controled" name="name" id="name" placeholder="NAME" required="" aria-required="true">
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col-md-12 mb-30">
-                                                    <!-- <label>Your email address *</label> -->
-                                                    <input type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required="" aria-required="true">
-                                                </div>
-                                            </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 col-md-4">
+                                    <div class="fes4-box">
+                                        <div class="" >
+                                        q    <h4 style="color:black !important;"><span class="bold"><span class="bold">PAX</span></h4>
+                                            <input style="color:black !important;" class=" w-100" type="number" pattern="\d{2}" onkeypress="javascript:return isNumber(event)" max="{{pax}}" min="1" value="{{pax}}" data-msg-required="Please enter how many are attending" class="controled" name="email" id="pax" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                    <div class="fes4-box">
+                                        <div class="" >
+                                            <h4 style="color:black !important;"><span class="bold"><span class="bold">VACCINATION STATUS</span></h4>
+                                            <select style="color:black !important;" id="vaccination" class="form-select w-100 pt-0 pb-1" aria-label=".form-select-sm example">
+                                              <option value="Fully Vaccinated">Fully Vaccinated</option>
+                                              <option value="Already had at least 1 dose">Already had at least 1 dose</option>
+                                              <option value="Not yet vaccinated">Not yet vaccinated</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-12 col-sm-12 col-md-12">
+                                    <div class="fes4-box">
+                                        <div class="" >
+                                            <h4><span class="bold" style="color:black !important;"><span class="bold">ANY FOOD ALLERGIES?</span></h4>
                                             <div class="row">
                                                 <div class="col-md-12 mb-40">
                                                     <!-- <label>Message *</label> -->
-                                                    <textarea maxlength="5000" data-msg-required="Please enter your message" rows="3" class="controled" name="message" id="message" placeholder="MESSAGE" required="" aria-required="true"></textarea>
+                                                    <textarea style="color:black !important;" maxlength="5000" data-msg-required="Please enter your message" rows="3" class="controled" name="message" id="allergies" placeholder="(optional)" ></textarea>
                                                 </div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-12 text-center-xxs">
-                                                    <input type="submit" value="SEND MESSAGE" class="button medium gray" data-loading-text="Loading...">
+                                                    <a style="border-radius:36px !important; background-color:white; border-color:white;" class="button pt-2 medium thin gray hover-dark tp-button " id="Submit" >SUBMIT</a>
                                                 </div>
                                             </div>
-                                        </form>
-                                        <div class="alert alert-success hidden animated fadeIn" id="contactSuccess">
-                                            <strong>Success!</strong> Your message has been sent to us.
-                                        </div>
-                                        <div class="alert alert-danger hidden animated shake" id="contactError">
-                                            <strong>Error!</strong> There was an error sending your message.
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
+            </div>
+        </div>
 
 
 
-
-
-
-                <!-- RSVP -->
-                <div class="page-section "  style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
-                    <div class="container fes4-cont">
-                        <div class="row">
-                            <div class="col-md-3 ">
-                                <div class="fes4-box">
-                                    <h1 class="" style="margin-top:19px; !important; color:black !important;"><span class="bold">RSVP</span></h1>
-                                </div>
-                            </div>
-                            <div class="col-md-8 col-lg-offset-1">
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <div class="fes4-box">
-                                            <div class="" >
-                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">EMAIL</span></h4>
-                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <div class="fes4-box">
-                                            <div class="" >
-                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">MOBILE NUMBER</span></h4>
-                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-4 col-sm-4 col-md-4">
-                                        <div class="fes4-box">
-                                            <div class="" >
-                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">PAX</span></h4>
-                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xs-8 col-sm-8 col-md-8">
-                                        <div class="fes4-box">
-                                            <div class="" >
-                                                <h4 style="color:black !important;"><span class="bold"><span class="bold">VACCINATION STATUS</span></h4>
-                                                <input class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-xs-12 col-sm-12 col-md-12">
-                                        <div class="fes4-box">
-                                            <div class="" >
-                                                <h4><span class="bold" style="color:black !important;"><span class="bold">ANY FOOD ALLERGIES?</span></h4>
-                                                <div class="row">
-                                                    <div class="col-md-12 mb-40">
-                                                        <!-- <label>Message *</label> -->
-                                                        <textarea maxlength="5000" data-msg-required="Please enter your message" rows="3" class="controled" name="message" id="message" placeholder="MESSAGE" required></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="row">
-                                                    <div class="col-md-12 text-center-xxs">
-                                                        <a class="button medium thin hover-dark tp-button custom-button " href="">SUBMIT</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- FOOTER 1 -->
+<!--########################-->
+<!--FOOTER FOOTER FOOTER-->
+<!--########################-->
                 <footer class="page-section text-center pt-100-b-80-cont">
                     <div class="container">
                         <!-- Copyright -->
@@ -586,8 +534,10 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
         </div>
 
 
-
-        <nav>
+<!--########################-->
+<!--NAV NAV NAV NAV-->
+<!--########################-->
+<nav>
    <div class="fs-primary-nav fs-nav-black">
       <ul class="block-center-xy">
          <li><a class="a-white" href="#">home</a></li>
@@ -599,6 +549,8 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
       </ul>
    </div>
 </nav>
+
+
         <!-- End wrap -->
         <!-- JS begin -->
         <!-- jQuery  -->
@@ -628,7 +580,53 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
         <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
         <!-- ONE PAGE NAV -->
         <script src="{% static 'js/jquery.nav.js' %}"></script>
+
         <script>
+
+            $("#Submit").click(function(){
+                var rsvp_form = document.getElementById("rsvp_form")
+                if(rsvp_form.checkValidity()){
+                    var email = $("#email").val();
+                    var number = $("#number").val()
+                    var pax = $("#pax").val()
+                    var vaccination = $("#vaccination").val()
+                    var allergies = $("#allergies").val()
+                    var urlToken = "{{urlToken}}"
+
+                    data_dict = { "email": email,
+                                  "number": number,
+                                  "pax": pax,
+                                  "vaccination": vaccination,
+                                  "allergies": allergies,
+                                  "urlToken": urlToken
+                                  }
+
+                    alert(email + number + pax + vaccination + allergies + urlToken)
+
+                    $.ajax({
+                      url: "/invite/rsvp",
+                      type: "post",
+                      data: data_dict,
+                      headers: {'X-CsrfToken': "{{csrf_token}}"},
+                      success: function(data){
+                          $('#Submit').html("RSVP SENT");
+                      }
+                    })
+
+              }
+              else{
+                rsvp_form.reportValidity()
+              }
+            })
+
+            function isNumber(evt) {
+                var iKeyCode = (evt.which) ? evt.which : evt.keyCode
+                if (iKeyCode != 46 && iKeyCode > 31 && (iKeyCode < 48 || iKeyCode > 57))
+                    return false;
+
+                return true;
+            }
+
             $(document).ready(function() {
             //ONE PAGE NAV	---------------------------------------------------------------------------
             var top_offset = $('header').height() - 1;  // get height of fixed navbar

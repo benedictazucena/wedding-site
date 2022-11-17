@@ -5,6 +5,7 @@ class Invite(models.Model):
     name = models.CharField(max_length=150, db_index=True)
     urlToken = models.CharField(max_length=100, db_index=True, unique=True)
     pax = models.PositiveSmallIntegerField(default=1)
+    confirmedPax = models.PositiveSmallIntegerField(default=0)
     isEntourage = models.PositiveSmallIntegerField(default=0)
     rsvp = models.BooleanField(default=None)
     email = models.EmailField(blank=True, db_index=True)
@@ -12,7 +13,7 @@ class Invite(models.Model):
     confirmedCompany = models.BooleanField(default=None)
     vaccinationStatus = models.BooleanField(default=None)
     allergies = models.CharField(blank=True, max_length=200)
-
+    vaccinationResponse = models.CharField(max_length=100, blank=True)
     created = models.DateTimeField(auto_now_add=True, db_index=True)
     modified = models.DateTimeField(auto_now=True, db_index=True)
 
@@ -26,5 +27,7 @@ class Invite(models.Model):
         d['email'] = self.email
         d['isEntourage'] = self.isEntourage
         d['pax'] = self.pax
+        d['confirmedPax'] = self.confirmedPax
+        d['vaccinationResponse'] = self.vaccinationResponse
         d['mobile'] = self.mobile
         return d
