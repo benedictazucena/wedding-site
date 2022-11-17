@@ -3225,6 +3225,7 @@ select.input-border {
   color: black;
 }
 
+
 /* Effect 3: bottom line slides/fades in */
 .affix #main-menu .navbar .nav > li > a {
   -webkit-transition: padding .4s ease 0s;
