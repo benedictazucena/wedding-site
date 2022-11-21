@@ -206,8 +206,9 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     </div>
                                     <!-- LAYER NR. 3 -->
                                     {% if request.session.invite_token %}
+
                                     <div class="center-0-478">
-                                        <a class="button medium thin hover-dark tp-button white " href="">RSVP</a>
+                                        <a class="button medium thin hover-dark tp-button white " href="#rsvpsection">RSVP {{ request.session.invite_token}}</a>
                                     </div>
                                     {% else %}
                                     <div class="row text-center"></div>
@@ -356,7 +357,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                       <h4 class="mt-0 mb-0">Doors open at</h4>
                       <h3 class="mt-0"> <bold>4:15 PM</bold></h3>
                       <h4>The ATRIUM & COURTYARD<br>
-                          Enderun, Taguig CITY</h4>
+                          Enderun, Taguig City</h4>
 
                       <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="gmap" ><bold>SEE MAP HERE</bold></a>
 
@@ -452,7 +453,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
         {% if request.session.invite_token %}
         <!-- RSVP -->
 
-        <div class="page-section "  style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
+        <div class="page-section " id="rsvpsection"  style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
             <div class="container fes4-cont">
                 <form id="rsvp_form">
                     <div class="row">
@@ -467,7 +468,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     <div class="fes4-box">
                                         <div class="" >
                                             <h4 style="color:black !important;">EMAIL</h4>
-                                            <input style="color:black !important;" class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="EMAIL" required>
+                                            <input style="color:black !important;" class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="Email" required>
                                         </div>
                                     </div>
                                 </div>
@@ -558,11 +559,12 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <nav>
    <div class="fs-primary-nav fs-nav-black">
       <ul class="block-center-xy">
-         <li><a class="a-white" href="#">home</a></li>
-         <li><a class="a-white" href="#">our story</a></li>
-         <li><a class="a-white" href="#">event details</a></li>
-         <li><a class="a-white" href="#">registry</a></li>
-          <li><a class="a-white" href="#">rsvp</a></li>
+<!--         <li><a class="a-white" href="#">home</a></li>-->
+<!--         <li><a class="a-white" href="#">our story</a></li>-->
+<!--         <li><a class="a-white" href="#">event details</a></li>-->
+<!--         <li><a class="a-white" href="#">registry</a></li>-->
+<!--          <li><a class="a-white " href="/invite/#rsvpsection">rsvp</a></li>-->
+          <li><a class="a-white "  id="logout" style="color:pink !important;">log out</a></li>
 
       </ul>
    </div>
@@ -600,6 +602,16 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
         <script src="{% static 'js/jquery.nav.js' %}"></script>
 
         <script>
+
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
             $("#Submit").click(function(){
                 var rsvp_form = document.getElementById("rsvp_form")
@@ -671,6 +683,13 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
               else{
                 token_form.reportValidity()
               }
+            })
+
+            $("#logout").click(function(){
+
+                    location.href = "/invite/logout"
+
+
             })
 
             function isNumber(evt) {

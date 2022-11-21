@@ -12,17 +12,24 @@ def index(request, invite_token=None):
 
     try:
         if invite_token:
+            invite_token = invite_token.upper()
             invite = get_object_or_404(Invite, urlToken=invite_token)
-            context = invite.as_dict()
-            request.session['invite_token'] = invite_token
+            if invite:
+                print("weeeh")
+                context = invite.as_dict()
+                request.session['invite_token'] = invite_token
+            else:
+                print("ggser")
+                del request.session['invite_token']
         elif request.session.get('invite_token'):
             invite = get_object_or_404(Invite, urlToken=request.session['invite_token'])
             context = invite.as_dict()
+
     except Exception as e:
         print(e)
         print("weeeeeew")
         context['error'] = "The token you entered does not exist, kindly validate your entry."
-
+        request.session.flush()
 
     return render(request, 'index.html', context)
 
@@ -53,4 +60,11 @@ def rsvp(request):
 @csrf_exempt
 def gift(request):
 
+    return render(request, 'index.html')
+
+
+
+@csrf_exempt
+def logout(request):
+    request.session.flush()
     return render(request, 'index.html')
