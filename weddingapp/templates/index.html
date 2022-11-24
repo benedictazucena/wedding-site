@@ -63,13 +63,11 @@
 
         #message {
             position: fixed;
-            padding-top:5%;
-            padding-left:10%;
-            padding-right:10%;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 100 !important;
+        bottom: 50px;
+        left: 25%;
+        right: 25%;
+
+<!--            z-index: 100 !important;-->
         }
 
         @-webkit-keyframes pulse {
@@ -645,7 +643,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 
         <script>
             function showAndDismissAlert(type, message) {
-                var htmlAlert = '<div class="alert alert-' + type + '">' + message + '</div>';
+                var htmlAlert = '<div class="alert text-center alert-' + type + '">' + message + '</div>';
 
                 // Prepend so that alert is on top, could also append if we want new alerts to show below instead of on top.
                 $(".alert-messages").prepend(htmlAlert);
