@@ -60,6 +60,25 @@
         <!-- Modernizr -->
         <!-- <script src="{% static 'js/modernizr.js' %}"></script> -->
         <style>
+        @-webkit-keyframes pulse {
+            0% { -webkit-transform: scale(0.8); opacity: 0.5; }
+            50% { -webkit-transform: scale(1.1); opacity: 1; }
+            100% { -webkit-transform: scale(0.8); opacity: 0.5; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            50% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0.5; }
+        }
+        #moredetails {
+
+        -webkit-animation: pulse 3s infinite ease-in-out;
+        -o-animation: pulse 3s infinite ease-in-out;
+        -ms-animation: pulse 3s infinite ease-in-out;
+        -moz-animation: pulse 3s infinite ease-in-out;
+        animation: pulse 3s infinite ease-in-out;
+        }
 
         * {
          font-family: 'Quicksand', sans-serif !important;
@@ -202,13 +221,13 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     </div>
                                     <!-- LAYER NR. 2 -->
                                     <div class="font-white norm-16-wide show-0-736 sm-mb-50 relative">
-                                        01/14/2023<span class="slash-divider-10">/</span>4:30PM<span class="slash-divider-10">/</span>THE ATRIUM, ENDERUN, TAGUIG
+                                        01/14/2023<span class="slash-divider-10">|</span>4:30PM<span class="slash-divider-10">|</span>THE ATRIUM, ENDERUN, TAGUIG
                                     </div>
                                     <!-- LAYER NR. 3 -->
                                     {% if request.session.invite_token %}
 
                                     <div class="center-0-478">
-                                        <a class="button medium thin hover-dark tp-button white " href="#rsvpsection">RSVP {{ request.session.invite_token}}</a>
+                                        <a class="button medium thin hover-dark tp-button white " href="#rsvpsection">RSVP</a>
                                     </div>
                                     {% else %}
                                     <div class="row text-center"></div>
@@ -301,9 +320,9 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                         <div class="row">
                             <div class="col-md-8 pl-40">
                                 <div class="row text-center">
-                                    <div class="col-md-12">
+                                    <div class="col-lg-12">
                                         <div class="fes1-main-title-cont wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
-                                            <div class="title-fs-60 mt-0 pt-0">
+                                            <div class="title-fs-60 mt-0 pt-0 pb-0">
                                                 A love that<br>
                                                 <span class="bold">God orchestrated</span>
                                             </div>
@@ -311,18 +330,19 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     </div>
                                 </div>
                                 <div class="row text-center">
-                                    <div class="col-md-12 col-sm-12">
-                                        <div class="wow fadeIn" style="visibility: visible; animation-name: fadeInLeft;">
-                                            <h4>Ours is a story of a journey shaped by prayer and trust.</h4>
-                                            <h4>Seeking God, we found each other along the way.<br>
-                                                And now, in His perfect time, here we are!<br>
+                                    <div class="col-lg-12">
+                                        <div class="wow fadeIn w-100" style="visibility: visible; animation-name: fadeInLeft;">
+                                            <h4>Ours is a story of a journey shaped by prayer and trust.
+                                                Seeking God, we found each other along the way.
+                                                And now, in His perfect time, here we are!
                                                 To get married in front of God and family.
                                             </h4>
                                         </div>
+                                        <br>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 fes1-img-cont wow fadeInUp mb-20" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="col-lg-4 fes1-img-cont wow fadeInUp mb-20" style="visibility: visible; animation-name: fadeInUp;">
                                 <img src="{% static 'images/Illustration2.jpg' %}" alt="img">
                             </div>
                         </div>
@@ -334,8 +354,8 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <!--########################-->
 <!--PICTURE GALLERY PICTURE GALLERY-->
 <!--########################-->
-            <div  class="page-section " >
-                <img src="{% static 'images/Illustration1.jpg' %}"  alt="Logo">
+            <div  class="page-section text-center pt-2 wow fadeIn" >
+                <img src="{% static 'images/Illustration01.png' %}" style="width:95% !important; padding-top:3%;" alt="Logo">
             </div>
 
 
@@ -356,7 +376,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                       <h3>JANUARY 14, 2023</h3>
                       <h4 class="mt-0 mb-0">Doors open at</h4>
                       <h3 class="mt-0"> <bold>4:15 PM</bold></h3>
-                      <h4>The ATRIUM & COURTYARD<br>
+                      <h4>The Atrium & Courtyard<br>
                           Enderun, Taguig City</h4>
 
                       <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="gmap" ><bold>SEE MAP HERE</bold></a>
@@ -366,27 +386,31 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                 <div class="row">
                         <img style="max-width: 100%; height: auto; display: block; margin-left: auto; margin-right: auto; width: 50%;" src="{% static 'images/enderun.png' %}"  alt="Logo">
                 </div>
+                  <div class="row text-center" style="padding-bottom:5% !important;">
+                        <span id="moredetails"><bold>Scroll Right >></bold></span>
+                </div>
               </div>
 
 
                 {% if isEntourage == 0 %}
 
                <!-- Slide Item -->
-              <div class="container relative">
-                  <br><br>
-                <div style="display: flex; align-items: center; justify-content: center;" class="row mt-4">
-                    <div class="col-md-6 text-right">
+              <div class="container">
+                <div class="row mt-4">
+                    <div class="col-md-6  text-center">
                         <img style="max-width: 50%;" src="{% static 'images/guest_attire.png' %}"  alt="Logo">
 
                   </div>
-                  <div class="col-md-6 text-left">
+                  <div class="col-md-6  text-left">
                       <h2><bold>ATTIRE</bold></h2>
-                      <h4 class="mt-0 mb-0">LONG DRESS FOR LADIES</h4>
-                      <span class="mt-0"><i>NO WHITE, BRIGHT COLORS & LOUD PRINTS</i></span>
-                      <h4 class="mb-0">SUIT AND TIE / LONG SLEEVES FOR MEN</h4>
-                      <span class="mt-0"><i>NO DARK GREY SUIT & BLACK TIE</i></span>
-                      <h4 class="mb-1">KINDLY FOLLOW THIS COLOR PALETTE.</h4>
+                      <h4 class="mt-0 mb-0">LONG/COCKTAIL DRESS FOR LADIES</h4>
+                      <span class="mt-0">Kindly avoid white, bright colors & loud prints</span>
+                      <h4 class="mb-0">SUIT & TIE OR LONG SLEEVES FOR MEN</h4>
+                      <span class="mt-0">Kindly avoid dark grey suits & black ties</span>
+                      <h4 class="mb-0">THE VIBE: EARTH TONES</h4>
+                      <span class="mt-0 mb-2">We appreciate you wearing colors like these for our photos together</span>
                       <img style="max-width: 50%; height: auto; display: block;  width: 50%;" src="{% static 'images/guest_pallete.png' %}"  alt="Logo">
+                      <br>
                   </div>
                 </div>
               </div>
@@ -395,20 +419,21 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 
             <!-- Slide Item -->
               <div class="container relative">
-                  <br><br>
-                <div style="display: flex !important; align-items: center !important; justify-content: center !important;" class="row mt-4" >
-                    <div class="col-md-6 text-right">
+                <div class="row mt-4" >
+                    <div class="col-sm-6 text-center">
                         <img style="max-width: 50%;" src="{% static 'images/entourage_attire.png' %}"  alt="Logo">
 
                   </div>
-                  <div class="col-md-6 text-left">
+                  <div class="col-sm-6 text-left">
                       <h2><bold>ATTIRE</bold></h2>
                       <h4 class="mt-0 mb-0">LONG DRESS FOR LADIES</h4>
-                      <span class="mt-0"><i>NO WHITE, BRIGHT COLORS & LOUD PRINTS</i></span>
-                      <h4 class="mb-0">SUIT AND TIE / LONG SLEEVES FOR MEN</h4>
-                      <span class="mt-0"><i>NO DARK GREY SUIT & BLACK TIE</i></span>
-                      <h4 class="mb-1">KINDLY FOLLOW THIS COLOR PALETTE.</h4>
-                      <img style="max-width: 50%; height: auto; display: block;  width: 50%;" src="{% static 'images/entourage_pallete.png' %}"  alt="Logo">
+                      <span class="mt-0">Kindly avoid white, bright colors & loud prints</span>
+                      <h4 class="mb-0">SUIT & TIE FOR GENTLEMEN</h4>
+                      <span class="mt-0">Kindly avoid dark grey suits & black ties</span>
+                      <h4 class="mb-0">THE VIBE: OLD ROSE</h4>
+                      <span class="mt-0 mb-2">We appreciate you wearing colors like these for our photos together</span>
+
+                      <img style="padding-top:2%; margin-bottom:2%; max-width: 50%; height: auto; display: block;  width: 50%;" src="{% static 'images/entourage_pallete.png' %}"  alt="Logo">
                   </div>
                 </div>
               </div>
