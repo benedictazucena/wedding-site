@@ -4,7 +4,7 @@ from reversion.admin import VersionAdmin
 from .models import Invite
 
 class InviteAdmin(VersionAdmin):
-    list_display = ('id', 'name', 'urlToken', 'pax', 'rsvp', 'confirmedCompany', 'email', 'vaccinationStatus', 'allergies', 'created', 'modified')
+    list_display = ('id', 'name', 'urlToken', 'isEntourage', 'pax', 'rsvp', 'confirmedPax', 'email', 'vaccinationStatus', 'allergies', 'modified')
     search_fields = ('id', 'urlToken', 'name')
     readonly_fields = ('created', 'modified', )
 
