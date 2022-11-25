@@ -30,4 +30,5 @@ class Invite(models.Model):
         d['confirmedPax'] = self.confirmedPax
         d['vaccinationResponse'] = self.vaccinationResponse
         d['mobile'] = self.mobile
+        d['allergies'] = self.allergies
         return d

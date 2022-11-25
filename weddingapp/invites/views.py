@@ -60,7 +60,7 @@ def rsvp(request):
 @csrf_exempt
 def gift(request):
 
-    return render(request, 'index.html')
+    return render(request, 'giftpage.html')
 
 
 
