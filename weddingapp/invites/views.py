@@ -45,7 +45,6 @@ def rsvp(request):
         invite = get_object_or_404(Invite, urlToken=invite_token)
         invite.rsvp = True
         invite.email = payload.get('email')
-        invite.confirmedPax = payload.get('pax')
         invite.mobile = payload.get('number')
         invite.vaccinationResponse = payload.get('vaccination')
         invite.allergies = payload.get('allergies')
