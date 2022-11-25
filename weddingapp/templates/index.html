@@ -487,16 +487,26 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <!--########################-->
         {% if request.session.invite_token %}
         <!-- RSVP -->
+        <div class="page-section " id="rsvpsection" style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
+            <div class="container fes4-cont " style="padding-top:5% !important; display: flex; align-items: center; justify-content: center;">
+                <form class="" id="rsvp_form" style="background-color:white !important; border-radius:10px; padding:5%  !important; box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; !important;">
 
-        <div class="page-section " id="rsvpsection"  style=" background-image: url({% static 'images/ping-bg.jpg' %})" >
-            <div class="container fes4-cont" style="display: flex; align-items: center; justify-content: center;">
-                <form id="rsvp_form" style="background-color:white !important; border-radius:10px; padding:5%  !important; box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; !important;">
-                    <div class="row">
+                    <div id="rsvp_confirmation" class="row {% if not rsvp %} hidden {% endif %}" >
+                        <div class="col-md-12 ">
+                                <div class="fes4-box">
+                                    <h1 class="" style="margin-top:19px; !important; color:black !important;"><span class="bold">RSVP</span></h1>
+                                </div>
+                            <h4>Thank you! We are exited to celebrate with you!</h4>
+                        </div>
+                    </div>
+
+                    <div class="row {% if rsvp %} hidden {% endif %}">
                         <div class="col-md-12 ">
                             <div class="fes4-box">
                                 <h1 class="" style="margin-top:19px; !important; color:black !important;"><span class="bold">RSVP</span></h1>
                             </div>
                         </div>
+
                         <div class="col-md-12 ">
                             <div class="row">
                                 <div class="col-xs-12 col-sm-12 col-md-12">
@@ -690,6 +700,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                       success: function(data){
                           showAndDismissAlert('success', 'RSVP Received!');
                           $('#Submit').html("RSVP SENT");
+                          $( "#rsvpsection" ).load(window.location.href + " #rsvpsection" );
                       }
 
                     })
