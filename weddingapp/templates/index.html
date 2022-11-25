@@ -464,7 +464,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                             a monetary present is one we humbly request.</h5>
                       <br><br>
 
-                      <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="https://goo.gl/maps/28yq229yKuqttsZx5" target="_blank" id="map" ><bold>CLICK HERE FOR DETAILS</bold></a>
+                      <a style="border-radius:36px !important; background-color:#222; border-color:#222; color:#F6CED1" class="button pt-2 medium thin gray hover-dark tp-button" href="/invite/gift" target="_blank" id="map" ><bold>CLICK HERE FOR DETAILS</bold></a>
 
                   </div>
                 </div>
@@ -503,7 +503,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     <div class="fes4-box">
                                         <div class="" >
                                             <h4 style="color:black !important;">EMAIL</h4>
-                                            <input style="color:black !important;" class="text-light w-100" type="email" value="" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="Email" required>
+                                            <input style="color:black !important;" class="text-light w-100" type="email" value="{{email}}" data-msg-required="Please enter your email address" data-msg-email="Please enter a valid email address" maxlength="100" class="controled" name="email" id="email" placeholder="Email" required>
                                         </div>
                                     </div>
                                 </div>
@@ -513,7 +513,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     <div class="fes4-box">
                                         <div class="" >
                                             <h4 style="color:black !important;">MOBILE NUMBER</h4>
-                                            <input style="color:black !important;" class="text-light w-100" type="text" pattern="\d{11}" onkeypress="javascript:return isNumber(event)" value="" data-msg-required="Please enter a valid mobile number" minlength="11" maxlength="11" class="controled" name="number" id="number" placeholder="09XXXXXXXXX" required>
+                                            <input style="color:black !important;" class="text-light w-100" type="text" pattern="\d{11}" onkeypress="javascript:return isNumber(event)" value="{{mobile}}" data-msg-required="Please enter a valid mobile number" minlength="11" maxlength="11" class="controled" name="number" id="number" placeholder="09XXXXXXXXX" required>
                                         </div>
                                     </div>
                                 </div>
@@ -548,7 +548,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                             <div class="row">
                                                 <div class="col-md-12 mb-40">
                                                     <!-- <label>Message *</label> -->
-                                                    <textarea style="color:black !important;" maxlength="5000" data-msg-required="Please enter your message" rows="3" class="controled" name="message" id="allergies" placeholder="(optional)" ></textarea>
+                                                    <textarea style="color:black !important;" maxlength="5000" data-msg-required="Please enter your message" rows="3" class="controled" name="message" id="allergies" placeholder="(optional)" value="{{allergies}}"></textarea>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -754,7 +754,6 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
             $(document).ready(function() {
             //ONE PAGE NAV	---------------------------------------------------------------------------
             var top_offset = $('header').height() - 1;  // get height of fixed navbar
-
             $('#nav-onepage').onePageNav({
               currentClass: 'current',
               changeHash: false,
