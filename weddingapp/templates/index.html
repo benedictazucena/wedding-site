@@ -679,14 +679,12 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                 if(rsvp_form.checkValidity()){
                     var email = $("#email").val();
                     var number = $("#number").val()
-                    var pax = {{ pax }}
                     var vaccination = $("#vaccination").val()
                     var allergies = $("#allergies").val()
                     var urlToken = "{{urlToken}}"
 
                     data_dict = { "email": email,
                                   "number": number,
-                                  "pax": pax,
                                   "vaccination": vaccination,
                                   "allergies": allergies,
                                   "urlToken": urlToken
