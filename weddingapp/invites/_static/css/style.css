@@ -3346,8 +3346,8 @@ select.input-border {
 /*****	#ANIMATION FOR SUB MENU	*****/
 #main-menu .parent:hover > .sub {	
   display: block ; 
-  -webkit-animation: fadeIn .4s;
-  animation: fadeIn .4s;
+  -webkit-animation: fadeIn .6s;
+  animation: fadeIn .6s;
 }
 #main-menu .sub a {
   color: #d3d3d3;
@@ -3551,8 +3551,8 @@ background:none;
 }
 .header .primary .parent:hover > .sub {
   display: block;
-  -webkit-animation: fadeIn .4s;
-  animation: fadeIn .4s;
+  -webkit-animation: fadeIn .8s;
+  animation: fadeIn .8s;
 }
 .header .primary .sub a {
   color: #1e1e1e;
