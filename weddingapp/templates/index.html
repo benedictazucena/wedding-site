@@ -62,6 +62,11 @@
         <style>
 
         @media (max-width:600px) { #rsvp_form { width: 96% !important; } }
+        @media (min-width:770px) {
+
+        .rowcenter {
+                display: flex !important; align-items: center !important; justify-content: center !important;}
+        }
 
         #message {
             position: fixed !important;
@@ -324,10 +329,10 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <!--OUR STORY OUR STORY-->
 <!--########################-->
 {% if request.session.invite_token %}
-                <div id="about-us-link" class="page-section" style="background-image: url({% static 'images/ping-bg.jpg' %}); box-shadow: rgb(44, 62, 80) 0px 15px 15px -15px inset, rgb(44, 62, 80) 0px -15px 15px -15px inset;" data-stellar-background-ratio="0.5">
+                <div id="about-us-link" class="page-section" style="background-image: url({% static 'images/ping-bg.jpg' %});" data-stellar-background-ratio="0.5">
                     <div class="container fes1-cont ">
-                        <div class="row">
-                            <div class="col-md-8 pl-40">
+                        <div class="row h-50 rowcenter" style="" >
+                            <div class="col-md-8 pl-40 d-table h-100">
                                 <div class="row text-center">
                                     <div class="col-lg-12">
                                         <div class="fes1-main-title-cont wow fadeInDown" style="visibility: visible; animation-name: fadeInDown;">
@@ -351,7 +356,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-lg-4 fes1-img-cont wow fadeInUp mb-20" style="visibility: visible; animation-name: fadeInUp;">
+                            <div class="col-lg-4 h-100 d-table fes1-img-cont wow fadeInUp mb-20" style="visibility: visible; animation-name: fadeInUp;">
                                 <img src="{% static 'images/Illustration2.jpg' %}" alt="img">
                             </div>
                         </div>
@@ -378,8 +383,8 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
             <div class="owl-white-bg fullwidth-slider ">
 
               <!-- Slide Item -->
-              <div class="container relative">
-                <div style="display: flex; align-items: center; justify-content: center;" class="row">
+              <div class="container">
+                <div class="row rowcenter">
                   <div class="col-md-12 text-center ">
 
                       <h3>JANUARY 14, 2023</h3>
@@ -404,13 +409,13 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                 {% if isEntourage == 0 %}
 
                <!-- Slide Item -->
-              <div class="container">
-                <div class="row mt-4">
-                    <div class="col-md-6  text-center">
+              <div class="container rowcenter">
+                <div class="row mt-4 rowcenter">
+                    <div class="col-sm-6  text-center">
                         <img style="max-width: 50%;" src="{% static 'images/guest_attire.png' %}"  alt="Logo">
 
                   </div>
-                  <div class="col-md-6  text-left">
+                  <div class="col-sm-6  text-left">
                       <h2><bold>ATTIRE</bold></h2>
                       <h4 class="mt-0 mb-0">LONG/COCKTAIL DRESS FOR LADIES</h4>
                       <span class="mt-0">Kindly avoid white, bright colors & loud prints</span>
@@ -427,8 +432,8 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                   {% else %}
 
             <!-- Slide Item -->
-              <div class="container relative">
-                <div class="row mt-4" >
+              <div class="container rowcenter">
+                <div class="row mt-4 rowcenter" >
                     <div class="col-sm-6 text-center">
                         <img style="max-width: 50%;" src="{% static 'images/entourage_attire.png' %}"  alt="Logo">
 
@@ -452,7 +457,7 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
                 <!-- Slide Item -->
               <div class="container relative">
                 <br>
-                <div style="display: flex; align-items: center; justify-content: center;" class="row">
+                <div class="row rowcenter">
                   <div class="col-md-12 text-center">
                       <img style="max-width: 10%;" src="{% static 'images/gift.png' %}"  alt="Logo">
 
@@ -486,22 +491,22 @@ box-shadow: 0px -2px 19px 10px rgba(59,59,59,0.34);
 <!--########################-->
         {% if request.session.invite_token %}
         <!-- RSVP -->
-        <div class="page-section " id="rsvpsection" style=" background-image: url({% static 'images/ping-bg.jpg' %}); box-shadow: rgb(44, 62, 80) 0px 15px 15px -15px inset;" >
+        <div class="page-section " id="rsvpsection" style=" background-image: url({% static 'images/ping-bg.jpg' %});" >
             <div class="container fes4-cont " style=" padding-top:5% !important; display: flex; align-items: center; justify-content: center;">
                 <form class="" id="rsvp_form" style="width: 66%; background-color:white !important; border-radius:10px; padding:5%  !important; box-shadow:
-      0 1px 1px hsl(0deg 0% 0% / 0.075),
-      0 2px 2px hsl(0deg 0% 0% / 0.075),
-      0 4px 4px hsl(0deg 0% 0% / 0.075),
-      0 8px 8px hsl(0deg 0% 0% / 0.075),
-      0 16px 16px hsl(0deg 0% 0% / 0.075)
-    ; !important;">
+                  0 1px 1px hsl(0deg 0% 0% / 0.075),
+                  0 2px 2px hsl(0deg 0% 0% / 0.075),
+                  0 4px 4px hsl(0deg 0% 0% / 0.075),
+                  0 8px 8px hsl(0deg 0% 0% / 0.075),
+                  0 16px 16px hsl(0deg 0% 0% / 0.075)
+                ; !important;">
 
                     <div id="rsvp_confirmation" class="row {% if not rsvp %} hidden {% endif %}" >
                         <div class="col-md-12 text-center">
                                 <div class="fes4-box">
                                     <h1 class="wow fadeInDown" style="margin-top:19px; !important; color:black !important;"><span class="bold">RSVP</span></h1>
                                 </div>
-                            <h5 class="wow fadeInUp">Thank you! We have received your response. <br>We are exited to celebrate with you!</h5><br>
+                            <h5 class="wow fadeInUp">Thank you! We have received your response. <br>We are excited to celebrate with you!</h5><br>
                         </div>
                     </div>
 
