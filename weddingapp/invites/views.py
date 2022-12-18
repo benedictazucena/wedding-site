@@ -61,6 +61,11 @@ def gift(request):
 
     return render(request, 'giftpage.html')
 
+@csrf_exempt
+def live(request):
+
+    return render(request, 'livestream.html')
+
 
 
 @csrf_exempt
