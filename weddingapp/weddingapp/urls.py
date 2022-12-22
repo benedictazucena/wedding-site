@@ -18,8 +18,8 @@ from django.urls import include, path
 from django.shortcuts import redirect
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', lambda req: redirect('/invite/')),
     path('invite/', include('invites.urls')),
-    path(r'', include('invites.urls')),
-    path('admin/', admin.site.urls),
+    path(r'', include('invites.urls'))
 ]
